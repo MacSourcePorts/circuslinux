@@ -66,6 +66,7 @@
 #include <ctype.h>
 #endif
 
+#import "msputils.h"
 
 /* Image enumerations: */
 
@@ -2869,7 +2870,7 @@ void setup(void)
     {
       /* Load image file: */
       
-      image = IMG_Load(image_names[i]);
+      image = IMG_Load(getBundlePathSubdirAndFile("Contents/Resources/Data", image_names[i]));
 
       if (image == NULL)
         {
@@ -2933,7 +2934,7 @@ void setup(void)
       
       for (i = 0; i < NUM_SOUNDS; i++)
         {
-          sounds[i] = Mix_LoadWAV(sound_names[i]);
+          sounds[i] = Mix_LoadWAV(getBundlePathSubdirAndFile("Contents/Resources/Data", sound_names[i]));
           if (sounds[i] == NULL)
             {
               fprintf(stderr,
@@ -2950,7 +2951,7 @@ void setup(void)
       
       /* (title) */
       
-      mus_title = Mix_LoadMUS(MUS_TITLE);
+      mus_title = Mix_LoadMUS(getBundlePathSubdirAndFile("Contents/Resources/Data", MUS_TITLE));
       if (mus_title == NULL)
 	{
 	  fprintf(stderr,
@@ -2963,7 +2964,7 @@ void setup(void)
 
       /* (game) */
       
-      mus_game = Mix_LoadMUS(MUS_GAME);
+      mus_game = Mix_LoadMUS(getBundlePathSubdirAndFile("Contents/Resources/Data", MUS_GAME));
       if (mus_game == NULL)
 	{
 	  fprintf(stderr,
@@ -2976,7 +2977,7 @@ void setup(void)
 
       /* (gameover) */
       
-      mus_gameover = Mix_LoadMUS(MUS_GAMEOVER);
+      mus_gameover = Mix_LoadMUS(getBundlePathSubdirAndFile("Contents/Resources/Data", MUS_GAMEOVER));
       if (mus_gameover == NULL)
 	{
 	  fprintf(stderr,
@@ -2989,7 +2990,7 @@ void setup(void)
 
       /* (hiscore) */
 
-      mus_hiscore = Mix_LoadMUS(MUS_HISCORE);
+      mus_hiscore = Mix_LoadMUS(getBundlePathSubdirAndFile("Contents/Resources/Data", MUS_HISCORE));
       if (mus_hiscore == NULL)
 	{
 	  fprintf(stderr,
@@ -3002,7 +3003,7 @@ void setup(void)
 
       /* (hiscore screen) */
 
-      mus_hiscreen = Mix_LoadMUS(MUS_HISCORESCREEN);
+      mus_hiscreen = Mix_LoadMUS(getBundlePathSubdirAndFile("Contents/Resources/Data", MUS_HISCORESCREEN));
       if (mus_hiscreen == NULL)
 	{
 	  fprintf(stderr,
@@ -3359,7 +3360,7 @@ void seticon(void)
   
   /* Load icon into a surface: */
   
-  icon = IMG_Load(DATA_PREFIX "images/icon.png");
+  icon = IMG_Load(getBundlePathSubdirAndFile("Contents/Resources/Data", "images/icon.png"));
   if (icon == NULL)
     {
       fprintf(stderr,
