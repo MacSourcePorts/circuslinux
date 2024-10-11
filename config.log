@@ -15,19 +15,14 @@ configure:843: checking whether make sets ${MAKE}
 configure:872: checking for gcc
 configure:985: checking whether the C compiler (gcc  ) works
 configure:1001: gcc -o conftest    conftest.c  1>&5
-configure:998:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+configure:998:1: error: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
 main(){return(0);}
 ^
-1 warning generated.
-configure:1027: checking whether the C compiler (gcc  ) is a cross-compiler
-configure:1032: checking whether we are using GNU C
-configure:1041: gcc -E conftest.c
-configure:1060: checking whether gcc accepts -g
-configure:1103: checking for a BSD compatible install
-configure:1199: checking for sdl-config
-configure:1234: checking for SDL - version >= 1.0.8
-configure:1319: gcc -o conftest -g -O2 -I/opt/homebrew/include/SDL -D_GNU_SOURCE=1 -D_THREAD_SAFE   conftest.c  -L/opt/homebrew/lib -lSDLmain -lSDL -Wl,-framework,Cocoa 1>&5
-configure:1406: checking for main in -lSDL_image
-configure:1421: gcc -o conftest -g -O2 -I/opt/homebrew/include/SDL -D_GNU_SOURCE=1 -D_THREAD_SAFE   conftest.c -lSDL_image   -L/opt/homebrew/lib -lSDLmain -lSDL -Wl,-framework,Cocoa 1>&5
-configure:1447: checking for main in -lSDL_mixer
-configure:1462: gcc -o conftest -g -O2 -I/opt/homebrew/include/SDL -D_GNU_SOURCE=1 -D_THREAD_SAFE   conftest.c -lSDL_mixer   -L/opt/homebrew/lib -lSDLmain -lSDL -Wl,-framework,Cocoa -lSDL_image 1>&5
+int
+1 error generated.
+configure: failed program was:
+
+#line 996 "configure"
+#include "confdefs.h"
+
+main(){return(0);}

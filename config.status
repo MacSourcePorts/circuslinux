@@ -39,13 +39,13 @@ sed 's/%@/@@/; s/@%/@@/; s/%g$/@g/; /@g$/s/[\\&%]/\\&/g;
 /^[ 	]*VPATH[ 	]*=[^:]*$/d
 
 s%@SHELL@%/bin/sh%g
-s%@CFLAGS@%-g -O2 -I/opt/homebrew/include/SDL -D_GNU_SOURCE=1 -D_THREAD_SAFE -D__SOUND%g
+s%@CFLAGS@%-g -O2 -I/usr/local/include/SDL -D_GNU_SOURCE=1 -D_THREAD_SAFE -D__SOUND%g
 s%@CPPFLAGS@%%g
 s%@CXXFLAGS@%%g
 s%@FFLAGS@%%g
 s%@DEFS@% -DPACKAGE=\"circuslinux\" -DVERSION=\"1.0.3\" %g
 s%@LDFLAGS@%%g
-s%@LIBS@% -L/opt/homebrew/lib -lSDLmain -lSDL -Wl,-framework,Cocoa -lSDL_image -lSDL_mixer%g
+s%@LIBS@% -L/usr/local/lib -lSDLmain -lSDL -Wl,-framework,Cocoa -lSDL_image -lSDL_mixer%g
 s%@exec_prefix@%${prefix}%g
 s%@prefix@%/usr/local%g
 s%@program_transform_name@%s,x,x,%g
@@ -83,9 +83,9 @@ s%@target_cpu@%%g
 s%@target_vendor@%%g
 s%@target_os@%%g
 s%@CC@%gcc%g
-s%@SDL_CONFIG@%/opt/homebrew/bin/sdl-config%g
-s%@SDL_CFLAGS@%-I/opt/homebrew/include/SDL -D_GNU_SOURCE=1 -D_THREAD_SAFE%g
-s%@SDL_LIBS@%-L/opt/homebrew/lib -lSDLmain -lSDL -Wl,-framework,Cocoa%g
+s%@SDL_CONFIG@%/usr/local/bin/sdl-config%g
+s%@SDL_CFLAGS@%-I/usr/local/include/SDL -D_GNU_SOURCE=1 -D_THREAD_SAFE%g
+s%@SDL_LIBS@%-L/usr/local/lib -lSDLmain -lSDL -Wl,-framework,Cocoa%g
 s%@JOY@%NO%g
 s%@TARGET_DEF@%%g
 

@@ -72,9 +72,9 @@ POST_UNINSTALL = :
 host_alias = macos-arm64
 host_triplet = 
 MAKEINFO = makeinfo
-SDL_CFLAGS = -I/opt/homebrew/include/SDL -D_GNU_SOURCE=1 -D_THREAD_SAFE
-SDL_CONFIG = /opt/homebrew/bin/sdl-config
-SDL_LIBS = -L/opt/homebrew/lib -lSDLmain -lSDL -Wl,-framework,Cocoa
+SDL_CFLAGS = -I/usr/local/include/SDL -D_GNU_SOURCE=1 -D_THREAD_SAFE -mmacosx-version-min=10.7
+SDL_CONFIG = /usr/local/bin/sdl-config
+SDL_LIBS = -L/usr/local/lib -lSDLmain -lSDL -Wl,-framework,Cocoa
 
 PACKAGE = circuslinux
 VERSION = 1.0.3
